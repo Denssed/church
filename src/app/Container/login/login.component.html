@@ -1,0 +1,14 @@
+<div class="loginPaigeCointainer">
+  <div class="loginContainer">
+    <div class="imgContainer">
+      <img src="../../../assets/login.jpg" alt="Login Image">
+    </div>
+    <div class="loginFomContainer">
+      <h2>Login</h2>
+      <div *ngFor="let item of loginInput">
+        <app-form [item]="item" (submitValue)="getValues($event)" ></app-form>
+      </div>
+      <button (click)="authUser()">Log In</button>
+    </div>
+  </div>
+</div>

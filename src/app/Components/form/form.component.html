@@ -1,0 +1,11 @@
+<mat-form-field >
+  <mat-label>{{item!.label | titlecase}}</mat-label>
+  <input
+    matInput
+    [type]="item!.type"
+    [value]="this.value"
+    [ngModel]="this.value"
+    (ngModelChange)="setValue($event)"
+    required>
+  <!-- <mat-error *ngIf="item['name'].invalid">{{getErrorMessage()}}</mat-error> -->
+</mat-form-field>
