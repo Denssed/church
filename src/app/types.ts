@@ -5,6 +5,12 @@ type input = {
   type: string
 }
 
+type button = {
+  text: string,
+  type: string,
+  icon: string | undefined,
+}
+
 type formInput = {
   type: string,
   value: string
@@ -17,21 +23,6 @@ interface login {
 
 export {
   input,
-  login
+  login,
+  button
 };
-
-
-// interface user {
-//   email: {
-//       label: string,
-//       name: string,
-//       type: string,
-//       placeholder: string
-//     }
-//     password: {
-//       label: string,
-//       name: string,
-//       type: string,
-//       placeholder: string,
-//     }
-//   }

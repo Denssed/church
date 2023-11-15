@@ -8,7 +8,7 @@
       <div *ngFor="let item of loginInput">
         <app-form [item]="item" (submitValue)="getValues($event)" ></app-form>
       </div>
-      <button (click)="authUser()">Log In</button>
+      <app-button [button]="button" (click)="authUser()"></app-button>
     </div>
   </div>
 </div>

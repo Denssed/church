@@ -1,0 +1,13 @@
+.btn {
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 25px 25px;
+  background-color: red;
+
+}
+
+.btn--secondary {
+  @extend .btn;
+
+}

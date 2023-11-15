@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/Services/Auth/auth.service';
-import { input, login } from '../../types'
+import { button, input, login } from '../../types'
 import { Router } from '@angular/router';
 
 @Component({
@@ -31,6 +31,12 @@ export class LoginComponent {
       type: 'password',
       value: ''
     }
+  }
+
+  button: button = {
+    text: 'INGRESAR',
+    type: 'Primary',
+    icon: ''
   }
 
   constructor(

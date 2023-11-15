@@ -4,13 +4,17 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationComponent } from './Container/navigation/navigation.component';
 
 
 //Components
-import { LoginComponent } from './Container/login/login.component';
 import { FormComponent } from './Components/form/form.component';
+import { ButtonComponent } from './Components/button/button.component';
 
+//Containers
+import { NavigationComponent } from './Container/navigation/navigation.component';
+import { LoginComponent } from './Container/login/login.component';
+
+//Material
 import { MaterialModule } from './material.module';
 
 @NgModule({
@@ -19,6 +23,7 @@ import { MaterialModule } from './material.module';
     NavigationComponent,
     FormComponent,
     LoginComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
