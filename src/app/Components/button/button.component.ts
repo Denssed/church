@@ -4,7 +4,7 @@ import { button } from 'src/app/types';
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
-  styleUrl: './button.component.css'
+  styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
 
