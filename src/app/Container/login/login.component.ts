@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from 'src/app/Services/Auth/auth.service';
 import { button, input, login } from '../../types'
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/Services/Admin.service';
+import { RegisterService } from 'src/app/Services/Register.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -35,17 +37,23 @@ export class LoginComponent {
 
   button: button = {
     text: 'INGRESAR',
-    type: 'Primary',
+    type: 'primary',
     icon: ''
   }
 
+  users: any[] = []
+
   constructor(
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private register: RegisterService
     ) { }
 
   ngOnInit() {
-
+    // this.register.getUsers().subscribe(data => {
+    //   console.log(data.body);
+    //   this.users = data.body;
+    // })
   }
 
   getValues(form: any) {
@@ -56,10 +64,6 @@ export class LoginComponent {
   authUser() {
     this.auth.authAccount(this.login.email.value, this.login.password.value);
     this.router.navigate(['/']);
-  }
-
-  register() {
-    console.log('register');
   }
 
   forgotPassword() {

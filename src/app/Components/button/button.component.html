@@ -1,1 +1,16 @@
-<button class="btn" mat-button>{{button!.text}}</button>
+<button
+  mat-button
+  [ngClass]="{
+    'btn--primary': button!.type === 'primary',
+    'btn--secondary': button!.type === 'secondary',
+    'btn--danger': button!.type === 'danger'
+  }"
+>
+  <span
+    [ngClass]="{
+      'btn__text--white': button!.type === 'primary' || 'danger',
+      'btn__text--black': button!.type === 'secondary'
+    }"
+    >{{ button!.text }}</span
+  >
+</button>

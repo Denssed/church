@@ -1,13 +1,33 @@
-.btn {
-  color: #000;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 25px 25px;
-  background-color: red;
+@import "../../theme.scss";
 
+.btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 25px 25px;
+  border-radius: 6px
+}
+
+.btn__text--white {
+  color: $white;
+}
+
+.btn__text--black {
+  color: $black;
+}
+
+.btn--primary {
+  @extend .btn;
+  background-color: $teal--500;
 }
 
 .btn--secondary {
   @extend .btn;
-
+  background-color: $white;
 }
+
+.btn--danger {
+  @extend .btn;
+  background-color: $danger;
+}
+
+
