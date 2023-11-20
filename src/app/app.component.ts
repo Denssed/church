@@ -17,7 +17,7 @@ export class AppComponent {
     const analytics = getAnalytics(app)
     const auth = getAuth(app);
 
-      this.router.navigate(['/login'])
+      // this.router.navigate(['/login'])
     // console.log(auth);
   }
 }

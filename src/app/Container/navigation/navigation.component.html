@@ -5,6 +5,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
+      <a mat-list-item routerLink="admin">Admin</a>
       <a mat-list-item routerLink="contable">Contable</a>
       <a mat-list-item routerLink="bautismo">Bautismo</a>
       <a mat-list-item routerLink="presentacion">Presentación</a>
@@ -26,8 +27,6 @@
       </button>
       <span>Brand</span>
     </mat-toolbar>
-    <div class="mainView">
-      <router-outlet></router-outlet>
-    </div>
+    <router-outlet/>
   </mat-sidenav-content>
 </mat-sidenav-container>

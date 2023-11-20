@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 //Components
 import { NavigationComponent } from './Container/navigation/navigation.component';
 import { LoginComponent } from './Container/login/login.component';
+import { AdminComponent } from './Container/admin/admin.component';
 
 const routes: Routes = [
   //Login
@@ -13,6 +14,7 @@ const routes: Routes = [
     path: '',
     component: NavigationComponent,
     children: [
+      { path: 'admin', component: AdminComponent },
       // { path: 'contable', component: NavigationComponent },
       // { path: 'bautismo', component: NavigationComponent },
       // { path: 'presentacion', component: NavigationComponent },
