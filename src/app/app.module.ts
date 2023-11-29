@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './Components/form/form.component';
 import { ButtonComponent } from './Components/button/button.component';
 import { NavTabComponent } from './Components/nav-tab/nav-tab.component';
+import { ModalFormComponent } from './Components/modal-form/modal-form.component';
+import { ModalDeleteComponent } from './Components/modal-delete/modal-delete.component';
 
 //Containers
 import { NavigationComponent } from './Container/navigation/navigation.component';
@@ -30,7 +32,9 @@ import { MaterialModule } from './material.module';
     LoginComponent,
     ButtonComponent,
     NavTabComponent,
-    AdminComponent
+    AdminComponent,
+    ModalFormComponent,
+    ModalDeleteComponent
   ],
   imports: [
     BrowserModule,

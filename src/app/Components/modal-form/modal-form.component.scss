@@ -1,0 +1,27 @@
+.flex{
+  display: flex;
+}
+
+.formContainer {
+  width: 600px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}

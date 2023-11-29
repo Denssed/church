@@ -1,7 +1,8 @@
 //Types
 type input = {
   label: string,
-  name: string,
+  placeholder: string,
+  inputType: string,
   type: string
 }
 
@@ -21,8 +22,13 @@ interface login {
   password: formInput
 }
 
+interface formInterface {
+  [key: string]: any
+}
+
 export {
   input,
   login,
-  button
+  button,
+  formInterface
 };

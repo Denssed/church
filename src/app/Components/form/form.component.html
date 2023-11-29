@@ -1,11 +1,30 @@
-<mat-form-field >
-  <mat-label>{{item!.label | titlecase}}</mat-label>
-  <input
-    matInput
-    [type]="item!.type"
-    [value]="this.value"
-    [ngModel]="this.value"
-    (ngModelChange)="setValue($event)"
-    required>
-  <!-- <mat-error *ngIf="item['name'].invalid">{{getErrorMessage()}}</mat-error> -->
-</mat-form-field>
+<div class="formContainer">
+  <label class="form__label"
+    ><b>{{ item!.label | titlecase }}</b></label
+  >
+  <mat-form-field>
+    <mat-label>{{ item!.placeholder | titlecase }}</mat-label>
+    <input
+      *ngIf="item!.inputType === 'input'"
+      matInput
+      [type]="item!.type"
+      [value]="item.value ? item.value : this.value"
+      [ngModel]="this.value"
+      (ngModelChange)="setValue($event)"
+      required
+    />
+    <div *ngIf="item?.inputType === 'select'">
+      <mat-select
+        [value]="this.value"
+        [ngModel]="this.value"
+        (ngModelChange)="setValue($event)"
+      >
+        <mat-option *ngFor="let rol of item!.roles" [value]="rol.value">{{
+          rol.viewValue
+        }}</mat-option>
+      </mat-select>
+    </div>
+
+    <!-- <mat-error *ngIf="item['name'].invalid">{{getErrorMessage()}}</mat-error> -->
+  </mat-form-field>
+</div>

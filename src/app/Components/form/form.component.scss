@@ -1,4 +1,9 @@
 .formContainer {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.form__label {
+  text-align: start;
 }

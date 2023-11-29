@@ -13,14 +13,16 @@ export class LoginComponent {
 
   loginInput: input[] = [
     {
-      label: 'Ingrese Email',
+      label: 'Email',
+      placeholder: 'Ingrese Email',
+      inputType: 'input',
       type: 'email',
-      name: 'test@gmail.com'
     },
     {
-      label: 'Ingrese Contraseña',
+      label: 'Contraseña',
+      placeholder: 'Ingrese Contraseña',
+      inputType: 'input',
       type: 'password',
-      name: '123456'
     }
   ]
 

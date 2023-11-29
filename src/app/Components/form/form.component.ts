@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { input } from 'src/app/types';
 
 
@@ -7,17 +7,25 @@ import { input } from 'src/app/types';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent {
+export class FormComponent implements OnInit {
 
-  @Input() item:input | undefined
+  @Input() item: any | undefined
   @Output() submitValue = new EventEmitter<{}>();
   value: string = '';
 
-  constructor() { }
+  constructor() {
+    // if (!this.item.value) this.value = this.item.value
+  }
+
+  ngOnInit(): void {
+    // console.log(this.item)
+    if (this.item.value) this.value = this.item.value
+  }
 
   setValue (value: any) {
+    console.log(this.item)
     this.value = value
-    this.submitValue.emit({name: this.item?.name, value})
+    this.submitValue.emit({type: this.item?.type, value})
     // console.log({name: this.item?.name, value});
   }
 

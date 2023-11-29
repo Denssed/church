@@ -1,0 +1,10 @@
+<div class="deleteContainer">
+  <h2><b>{{data!.title | uppercase}}</b></h2>
+  <div class="inputContainer">
+    <p><b>{{data!.description}}</b></p>
+  </div>
+  <div class="btnContainer">
+    <app-button  [button]="this.deleteBtn" (click)="onDeleteClick()"></app-button>
+    <app-button  [button]="this.cancelBtn" (click)="onNoClick()"></app-button>
+  </div>
+</div>

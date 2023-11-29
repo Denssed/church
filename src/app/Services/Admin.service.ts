@@ -13,6 +13,7 @@ export class AdminService {
 
 
 getStaffs(): Observable<any> {
+  console.log("Se ejecuto")
   return this.http.get<any>(`${this.URL}/staff`)
 }
 
@@ -25,7 +26,7 @@ getStaff(id: string): Observable<any> {
 }
 
 updateStaff(id: string, data: any): Observable<any> {
-  return this.http.put<any>(`${this.URL}/staff/${id}`, data)
+  return this.http.patch<any>(`${this.URL}/staff/${id}`, data)
 }
 
 deleteStaff(id: string): Observable<any> {
