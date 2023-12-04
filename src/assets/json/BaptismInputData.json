@@ -1,0 +1,63 @@
+{
+  "buttons": {
+    "addStaffButton": {
+      "text": "Agregar niño",
+      "type": "primary",
+      "icon": ""
+    },
+    "editButton": {
+      "text": "Editar",
+      "type": "primary",
+      "icon": ""
+    },
+    "deleteButton": {
+      "text": "Eliminar",
+      "type": "secondary",
+      "icon": ""
+    }
+  },
+  "BaptismInput": [
+    {
+      "label": "Nombre",
+      "placeholder": "Ingrese Nombre",
+      "inputType": "input",
+      "type": "name",
+      "value": ""
+    },
+    {
+      "label": "Apellido",
+      "placeholder": "Ingrese Apellido",
+      "inputType": "input",
+      "type": "lastName",
+      "value": ""
+    },
+    {
+      "label": "Pof",
+      "placeholder": "Ingrese pof",
+      "inputType": "input",
+      "type": "pof",
+      "value": true
+    },
+    {
+      "label": "Edad",
+      "placeholder": "Ingrese edad",
+      "inputType": "input",
+      "type": "edad",
+      "value": ""
+    }
+  ],
+  "modalBtn": {
+    "addBtn": {
+      "text": "Agregar",
+      "type": "primary"
+    },
+    "editBtn":{
+      "text": "Editar",
+      "type": "primary"
+    },
+    "deleteBtn": {
+      "text": "Eliminar",
+      "type": "secondary"
+    }
+  }
+}

@@ -20,17 +20,14 @@ import { Router } from '@angular/router';
 export class ModalDeleteComponent {
   deleteBtn: button = {
     text: 'Borrar',
-    type: 'primary',
-    icon: '',
+    type: 'primary'
   };
   cancelBtn: button = {
     text: 'Cancelar',
-    type: 'secondary',
-    icon: '',
+    type: 'secondary'
   };
 
   constructor(
-    private router: Router,
     private form: FormService,
     public dialogRef: MatDialogRef<ModalFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any

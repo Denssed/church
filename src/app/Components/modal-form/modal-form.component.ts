@@ -19,8 +19,7 @@ export class ModalFormComponent {
 
   cancelBtn: button = {
     text: 'Cancelar',
-    type: 'secondary',
-    icon: ''
+    type: 'secondary'
   }
 
   dataValidate: {type:string, validate: boolean} | undefined = undefined

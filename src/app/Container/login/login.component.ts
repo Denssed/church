@@ -39,8 +39,7 @@ export class LoginComponent {
 
   button: button = {
     text: 'INGRESAR',
-    type: 'primary',
-    icon: ''
+    type: 'primary'
   }
 
   users: any[] = []

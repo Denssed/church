@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { ModalFormComponent } from 'src/app/Components/modal-form/modal-form.component';
@@ -22,23 +22,20 @@ export interface Staff {
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss',
 })
-export class AdminComponent implements OnInit, OnChanges {
+export class AdminComponent implements OnInit {
   addStaffButton: button = {
     text: 'Add Staff',
-    type: 'primary',
-    icon: '',
+    type: 'primary'
   };
 
   editButton: button = {
     text: 'Editar',
-    type: 'primary',
-    icon: '',
+    type: 'primary'
   };
 
   deleteButton: button = {
     text: 'Eliminar',
-    type: 'secondary',
-    icon: '',
+    type: 'secondary'
   };
 
   displayedColumns: string[] = ['name', 'lastName', 'email', 'rol', 'action'];
@@ -112,21 +109,18 @@ export class AdminComponent implements OnInit, OnChanges {
 
   addBtn: button = {
     text: 'Agregar',
-    type: 'primary',
-    icon: '',
+    type: 'primary'
   };
 
   editBtn: button = {
     text: 'Editar',
-    type: 'primary',
-    icon: '',
+    type: 'primary'
   };
 
   //Editar color de boton
   deleteBtn: button = {
     text: 'Eliminar',
-    type: 'secondary',
-    icon: '',
+    type: 'secondary'
   };
 
   roles = [

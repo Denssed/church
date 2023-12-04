@@ -8,8 +8,7 @@ type input = {
 
 type button = {
   text: string,
-  type: string,
-  icon: string | undefined,
+  type: string
 }
 
 type formInput = {

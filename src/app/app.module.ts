@@ -23,6 +23,7 @@ import { AdminComponent } from './Container/admin/admin.component';
 
 //Material
 import { MaterialModule } from './material.module';
+import { BaptismComponent } from './Container/baptism/baptism.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MaterialModule } from './material.module';
     NavTabComponent,
     AdminComponent,
     ModalFormComponent,
-    ModalDeleteComponent
+    ModalDeleteComponent,
+    BaptismComponent
   ],
   imports: [
     BrowserModule,

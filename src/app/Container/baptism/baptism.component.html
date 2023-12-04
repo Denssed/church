@@ -1,0 +1,67 @@
+<app-nav-tab />
+<mat-tab-group>
+  <mat-tab label="Registro">
+    <div class="baptismContainer">
+      <div class="baptism__actions">
+        <app-button
+          [button]="this.data.buttons.addStaffButton"
+          (click)="openAddDialog()"
+        ></app-button>
+      </div>
+      <div class="baptism__table">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef>Apellido</th>
+            <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="pof">
+            <th mat-header-cell *matHeaderCellDef>POF</th>
+            <td mat-cell *matCellDef="let element">{{ element.pof? "Si" : "No" }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="age">
+            <th mat-header-cell *matHeaderCellDef>age</th>
+            <td mat-cell *matCellDef="let element">{{ element.age }}</td>
+          </ng-container>
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
+            <td mat-cell *matCellDef="let element">
+              <div class="action__butons">
+                <app-button
+                  [button]="this.data.buttons.editButton"
+                  (click)="openEditDialog(element.id)"
+                ></app-button>
+                <app-button
+                  [button]="this.data.buttons.deleteButton"
+                  (click)="
+                    openDeleteDialog(element.id, element.name, element.lastName)
+                  "
+                ></app-button>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Descargar bautismo">
+    <div class="baptismContainer">Content 2</div>
+  </mat-tab>
+</mat-tab-group>

@@ -19,7 +19,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [],
@@ -43,6 +43,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     MatStepperModule,
     MatDialogModule,
+    MatTabsModule,
   ],
   imports: [CommonModule],
 })
