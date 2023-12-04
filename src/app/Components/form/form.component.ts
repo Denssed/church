@@ -1,40 +1,32 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { input } from 'src/app/types';
 
-
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-
-  @Input() item: any | undefined
+  @Input() item: any | undefined;
   @Output() submitValue = new EventEmitter<{}>();
   value: string = '';
 
-  constructor() {
-    // if (!this.item.value) this.value = this.item.value
-  }
+  pattern: RegExp = new RegExp("")
+
+  constructor() {}
 
   ngOnInit(): void {
-    // console.log(this.item)
-    if (this.item.value) this.value = this.item.value
+    if (this.item.value) this.value = this.item.value;
+    if (this.item?.type === 'email') this.pattern = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+    if (this.item?.type === 'password') this.pattern = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)
+    // console.log(this.pattern)
   }
 
-  setValue (value: any) {
-    console.log(this.item)
-    this.value = value
-    this.submitValue.emit({type: this.item?.type, value})
+  setValue(value: any) {
+    this.value = value;
+    const validate = this.pattern.test(value);
+    // console.log(validate)
+    this.submitValue.emit({ type: this.item?.type, value, validate });
     // console.log({name: this.item?.name, value});
   }
-
-
-  // getErrorMessage() {
-  //   if (this.email.hasError('required')) {
-  //     return 'You must enter a value';
-  //   }
-
-  //   return this.email.hasError('email') ? 'Not a valid email' : '';
-  // }
 }

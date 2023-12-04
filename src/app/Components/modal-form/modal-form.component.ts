@@ -23,6 +23,8 @@ export class ModalFormComponent {
     icon: ''
   }
 
+  dataValidate: {type:string, validate: boolean} | undefined = undefined
+
   constructor(
     private form: FormService,
     public dialogRef: MatDialogRef<ModalFormComponent>,
@@ -31,14 +33,18 @@ export class ModalFormComponent {
 
   getValues(e: any) {
     this.form.getValues(e)
+    this.dataValidate = {type: e.type, validate: e.validate}
+    console.log("data", this.dataValidate)
   }
 
   setValues() {
     this.form.setValues(this.data.route)
+    this.dialogRef.close();
   }
 
   editValues() {
     this.form.editValues(this.data.route, this.data.id, this.data.input)
+    this.dialogRef.close();
   }
 
   onNoClick(): void {

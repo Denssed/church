@@ -10,6 +10,7 @@ import {
 import { FormService } from 'src/app/Services/Form.service';
 import { ModalFormComponent } from '../modal-form/modal-form.component';
 import { button } from 'src/app/types';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-delete',
@@ -29,13 +30,15 @@ export class ModalDeleteComponent {
   };
 
   constructor(
+    private router: Router,
     private form: FormService,
     public dialogRef: MatDialogRef<ModalFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
   onDeleteClick() {
-
+      this.form.deleteValues(this.data.route, this.data.id);
+      this.dialogRef.close();
   }
 
   onNoClick(): void {

@@ -39,7 +39,7 @@
         <td mat-cell *matCellDef="let element">
           <div class="action__butons">
             <app-button [button]="editButton" (click)="openEditDialog(element.id)"></app-button>
-            <app-button [button]="deleteButton" (click)="openDeleteDialog(element.name, element.lastName)"></app-button>
+            <app-button [button]="deleteButton" (click)="openDeleteDialog(element.id, element.name, element.lastName)"></app-button>
           </div>
         </td>
       </ng-container>

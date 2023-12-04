@@ -1,5 +1,11 @@
 <div class="formContainer">
   <h2><b>{{data!.title | uppercase}}</b></h2>
+  <!-- {{dataValidate?.validate}}
+  {{dataValidate?.type}} -->
+  <!-- {{!dataValidate?.validate && dataValidate?.type === ('email' || 'password')}} -->
+  <!-- <div *ngIf="!dataValidate?.validate && dataValidate?.type === 'email' || 'password'">
+    {{dataValidate?.type | titlecase}} invalido, seguir ejemplo {{dataValidate?.type === 'email' ? 'example@gmail.com' : 'Password10'}}
+  </div> -->
   <div class="inputContainer">
     <app-form *ngFor="let item of data!.input" [item]="item" (submitValue)="getValues($event)"></app-form>
   </div>

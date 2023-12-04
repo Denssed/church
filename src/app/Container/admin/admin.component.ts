@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { ModalFormComponent } from 'src/app/Components/modal-form/modal-form.component';
 import { ModalDeleteComponent } from 'src/app/Components/modal-delete/modal-delete.component';
 import { AdminService } from 'src/app/Services/Admin.service';
-import { button, input } from 'src/app/types';
+import { button } from 'src/app/types';
 
 export interface Staff {
   id: string;
@@ -22,7 +22,7 @@ export interface Staff {
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss',
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent implements OnInit, OnChanges {
   addStaffButton: button = {
     text: 'Add Staff',
     type: 'primary',
@@ -50,28 +50,28 @@ export class AdminComponent implements OnInit {
       placeholder: 'Ingrese Nombre',
       inputType: 'input',
       type: 'name',
-      value: ''
+      value: '',
     },
     {
       label: 'Apellido',
       placeholder: 'Ingrese Apellido',
       inputType: 'input',
       type: 'lastName',
-      value: ''
+      value: '',
     },
     {
       label: 'Email',
       placeholder: 'Ingrese Email',
       inputType: 'input',
       type: 'email',
-      value: ''
+      value: '',
     },
     {
       label: 'Contaseña',
       placeholder: 'Ingrese Contraseña',
       inputType: 'input',
       type: 'password',
-      value: ''
+      value: '',
     },
     {
       label: 'Rol',
@@ -80,8 +80,8 @@ export class AdminComponent implements OnInit {
       type: 'role',
       value: '',
       roles: [
-        { value: {admin:true}, viewValue: 'Admin' },
-        { value: {accountant:true}, viewValue: 'Accountant' },
+        { value: { admin: true }, viewValue: 'Admin' },
+        { value: { accountant: true }, viewValue: 'Accountant' },
       ],
     },
   ];
@@ -92,25 +92,23 @@ export class AdminComponent implements OnInit {
       placeholder: 'Ingrese Nombre',
       inputType: 'input',
       type: 'name',
-      value: ''
+      value: '',
     },
     {
       label: 'Apellido',
       placeholder: 'Ingrese Apellido',
       inputType: 'input',
       type: 'lastName',
-      value: ''
+      value: '',
     },
     {
       label: 'Email',
       placeholder: 'Ingrese Email',
       inputType: 'input',
       type: 'email',
-      value: ''
-    }
+      value: '',
+    },
   ];
-
-
 
   addBtn: button = {
     text: 'Agregar',
@@ -145,12 +143,20 @@ export class AdminComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.admin.getStaffs().subscribe((res) => {
+    this.getData();
+    this.currentRoute = this.route.snapshot.url[0].path;
+    console.log(this.currentRoute);
+  }
+
+  ngOnChanges() {
+    this.getData();
+  }
+
+  async getData() {
+    await this.admin.getStaffs().subscribe((res) => {
       this.dataSource = res.body;
-      console.log(this.dataSource)
-    })
-    this.currentRoute = this.route.snapshot.url[0].path
-    console.log(this.currentRoute)
+      console.log(this.dataSource);
+    });
   }
 
   openAddDialog(): void {
@@ -162,23 +168,20 @@ export class AdminComponent implements OnInit {
         title: 'Agregar Staff',
         onCreate: true,
       },
-    })
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
+      this.getData();
       console.log('The dialog was closed');
-    })
+    });
   }
 
   async openEditDialog(id: string) {
     await this.admin.getStaff(id).subscribe((res) => {
-      // console.log(res.body)
-      // console.log(this.StaffInputEdit)
-
-      this.StaffInputEdit.map(input =>{
-        input.value = res.body[input.type]
-        // console.log(input.value)
-      })
-    })
+      this.StaffInputEdit.map((input) => {
+        input.value = res.body[input.type];
+      });
+    });
 
     const dialogRef = this.dialog.open(ModalFormComponent, {
       data: {
@@ -187,27 +190,29 @@ export class AdminComponent implements OnInit {
         route: this.currentRoute,
         title: 'Editar Staff',
         onCreate: false,
-        id: id
+        id: id,
       },
-    })
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
+      this.getData();
       console.log('The dialog was closed');
-    })
+    });
   }
 
-  openDeleteDialog(name: string, lastName: string): void {
+  openDeleteDialog(id: string, name: string, lastName: string): void {
     const dialogRef = this.dialog.open(ModalDeleteComponent, {
       data: {
         route: this.currentRoute,
         title: 'Borrar Staff',
+        id: id,
         description: `Esta seguro que desea borrar al Staff ${name} ${lastName} de la base de datos?`,
-
       },
-    })
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
+      this.getData();
       console.log('The dialog was closed');
-    })
+    });
   }
 }
