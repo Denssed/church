@@ -2,8 +2,14 @@
 
 .btn {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 25px 25px;
+  border-radius: 6px
+}
+
+.btn--small {
+  font-size: 12px;
+  font-weight: 400;
   border-radius: 6px
 }
 
@@ -27,6 +33,21 @@
 
 .btn--danger {
   @extend .btn;
+  background-color: $danger;
+}
+
+.btn--primary--small {
+  @extend .btn--small;
+  background-color: $teal--500;
+}
+
+.btn--secondary--small {
+  @extend .btn--small;
+  background-color: $white;
+}
+
+.btn--danger--small {
+  @extend .btn--small;
   background-color: $danger;
 }
 

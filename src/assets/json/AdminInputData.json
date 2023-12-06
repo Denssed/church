@@ -1,0 +1,100 @@
+{
+  "buttons": {
+    "addStaffButton": {
+      "text": "Add Staff",
+      "type": "primary"
+    },
+
+    "editButton": {
+      "text": "Editar",
+      "type": "primary--small"
+    },
+
+    "deleteButton": {
+      "text": "Eliminar",
+      "type": "danger--small"
+    }
+  },
+  "StaffInputCreate": [
+    {
+      "label": "Nombre",
+      "placeholder": "Ingrese Nombre",
+      "inputType": "input",
+      "type": "name",
+      "value": ""
+    },
+    {
+      "label": "Apellido",
+      "placeholder": "Ingrese Apellido",
+      "inputType": "input",
+      "type": "lastName",
+      "value": ""
+    },
+    {
+      "label": "Email",
+      "placeholder": "Ingrese Email",
+      "inputType": "input",
+      "type": "email",
+      "value": ""
+    },
+    {
+      "label": "Contaseña",
+      "placeholder": "Ingrese Contraseña",
+      "inputType": "input",
+      "type": "password",
+      "value": ""
+    },
+    {
+      "label": "Rol",
+      "placeholder": "Ingrese Rol",
+      "inputType": "select",
+      "type": "role",
+      "value": "",
+      "roles": [
+        { "value": { "admin": true }, "viewValue": "Admin" },
+        { "value": { "accountant": true }, "viewValue": "Accountant" }
+      ]
+    }
+  ],
+  "StaffInputEdit": [
+    {
+      "label": "Nombre",
+      "placeholder": "Ingrese Nombre",
+      "inputType": "input",
+      "type": "name",
+      "value": ""
+    },
+    {
+      "label": "Apellido",
+      "placeholder": "Ingrese Apellido",
+      "inputType": "input",
+      "type": "lastName",
+      "value": ""
+    },
+    {
+      "label": "Email",
+      "placeholder": "Ingrese Email",
+      "inputType": "input",
+      "type": "email",
+      "value": ""
+    }
+  ],
+  "modalBtn": {
+    "addBtn": {
+      "text": "Agregar",
+      "type": "primary"
+    },
+    "editBtn": {
+      "text": "Editar",
+      "type": "primary"
+    },
+    "deleteBtn": {
+      "text": "Eliminar",
+      "type": "secondary"
+    }
+  },
+  "roles": [
+    { "value": true, "viewValue": "Admin" },
+    { "value": true, "viewValue": "Accountant" }
+  ]
+}

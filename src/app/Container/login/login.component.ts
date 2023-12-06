@@ -3,7 +3,6 @@ import { AuthService } from 'src/app/Services/Auth/auth.service';
 import { button, input, login } from '../../types'
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/Services/Admin.service';
-import { RegisterService } from 'src/app/Services/Register.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -47,7 +46,7 @@ export class LoginComponent {
   constructor(
     private auth: AuthService,
     private router: Router,
-    private register: RegisterService
+    private admin: AdminService
     ) { }
 
   ngOnInit() {

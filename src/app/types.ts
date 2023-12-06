@@ -25,9 +25,18 @@ interface formInterface {
   [key: string]: any
 }
 
+interface Baptism {
+  id: string;
+  name: string;
+  lastName: string;
+  pof: string;
+  age: string;
+}
+
 export {
   input,
   login,
   button,
-  formInterface
+  formInterface,
+  Baptism
 };

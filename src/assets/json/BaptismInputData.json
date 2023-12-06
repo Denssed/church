@@ -7,12 +7,12 @@
     },
     "editButton": {
       "text": "Editar",
-      "type": "primary",
+      "type": "primary--small",
       "icon": ""
     },
     "deleteButton": {
       "text": "Eliminar",
-      "type": "secondary",
+      "type": "danger--small",
       "icon": ""
     }
   },
@@ -51,7 +51,7 @@
       "text": "Agregar",
       "type": "primary"
     },
-    "editBtn":{
+    "editBtn": {
       "text": "Editar",
       "type": "primary"
     },

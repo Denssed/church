@@ -5,6 +5,9 @@ import { ModalFormComponent } from 'src/app/Components/modal-form/modal-form.com
 import { ModalDeleteComponent } from 'src/app/Components/modal-delete/modal-delete.component';
 import { AdminService } from 'src/app/Services/Admin.service';
 import { button } from 'src/app/types';
+import data from '../../../assets/json/AdminInputData.json';
+
+
 
 export interface Staff {
   id: string;
@@ -23,112 +26,11 @@ export interface Staff {
   styleUrl: './admin.component.scss',
 })
 export class AdminComponent implements OnInit {
-  addStaffButton: button = {
-    text: 'Add Staff',
-    type: 'primary'
-  };
-
-  editButton: button = {
-    text: 'Editar',
-    type: 'primary'
-  };
-
-  deleteButton: button = {
-    text: 'Eliminar',
-    type: 'secondary'
-  };
 
   displayedColumns: string[] = ['name', 'lastName', 'email', 'rol', 'action'];
   dataSource: Staff[] = [];
-
-  StaffInputCreate = [
-    {
-      label: 'Nombre',
-      placeholder: 'Ingrese Nombre',
-      inputType: 'input',
-      type: 'name',
-      value: '',
-    },
-    {
-      label: 'Apellido',
-      placeholder: 'Ingrese Apellido',
-      inputType: 'input',
-      type: 'lastName',
-      value: '',
-    },
-    {
-      label: 'Email',
-      placeholder: 'Ingrese Email',
-      inputType: 'input',
-      type: 'email',
-      value: '',
-    },
-    {
-      label: 'Contaseña',
-      placeholder: 'Ingrese Contraseña',
-      inputType: 'input',
-      type: 'password',
-      value: '',
-    },
-    {
-      label: 'Rol',
-      placeholder: 'Ingrese Rol',
-      inputType: 'select',
-      type: 'role',
-      value: '',
-      roles: [
-        { value: { admin: true }, viewValue: 'Admin' },
-        { value: { accountant: true }, viewValue: 'Accountant' },
-      ],
-    },
-  ];
-
-  StaffInputEdit = [
-    {
-      label: 'Nombre',
-      placeholder: 'Ingrese Nombre',
-      inputType: 'input',
-      type: 'name',
-      value: '',
-    },
-    {
-      label: 'Apellido',
-      placeholder: 'Ingrese Apellido',
-      inputType: 'input',
-      type: 'lastName',
-      value: '',
-    },
-    {
-      label: 'Email',
-      placeholder: 'Ingrese Email',
-      inputType: 'input',
-      type: 'email',
-      value: '',
-    },
-  ];
-
-  addBtn: button = {
-    text: 'Agregar',
-    type: 'primary'
-  };
-
-  editBtn: button = {
-    text: 'Editar',
-    type: 'primary'
-  };
-
-  //Editar color de boton
-  deleteBtn: button = {
-    text: 'Eliminar',
-    type: 'secondary'
-  };
-
-  roles = [
-    { value: true, viewValue: 'Admin' },
-    { value: true, viewValue: 'Accountant' },
-  ];
-
   currentRoute: string | undefined;
+  data = data
 
   constructor(
     private admin: AdminService,
@@ -156,8 +58,8 @@ export class AdminComponent implements OnInit {
   openAddDialog(): void {
     const dialogRef = this.dialog.open(ModalFormComponent, {
       data: {
-        input: this.StaffInputCreate,
-        button: this.addBtn,
+        input: this.data.StaffInputCreate,
+        button: this.data.modalBtn.addBtn,
         route: this.currentRoute,
         title: 'Agregar Staff',
         onCreate: true,
@@ -172,15 +74,15 @@ export class AdminComponent implements OnInit {
 
   async openEditDialog(id: string) {
     await this.admin.getStaff(id).subscribe((res) => {
-      this.StaffInputEdit.map((input) => {
+      this.data.StaffInputEdit.map((input) => {
         input.value = res.body[input.type];
       });
     });
 
     const dialogRef = this.dialog.open(ModalFormComponent, {
       data: {
-        input: this.StaffInputEdit,
-        button: this.editBtn,
+        input: this.data.StaffInputEdit,
+        button: this.data.modalBtn.editBtn,
         route: this.currentRoute,
         title: 'Editar Staff',
         onCreate: false,

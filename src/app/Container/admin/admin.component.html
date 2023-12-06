@@ -1,7 +1,7 @@
 <app-nav-tab/>
 <div class="adminContainer">
   <div class="admin__actions">
-    <app-button [button]="addStaffButton" (click)="openAddDialog()"></app-button>
+    <app-button [button]="data.buttons.addStaffButton" (click)="openAddDialog()"></app-button>
   </div>
   <div class="admin__table">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -38,8 +38,8 @@
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
           <div class="action__butons">
-            <app-button [button]="editButton" (click)="openEditDialog(element.id)"></app-button>
-            <app-button [button]="deleteButton" (click)="openDeleteDialog(element.id, element.name, element.lastName)"></app-button>
+            <app-button [button]="data.buttons.editButton" (click)="openEditDialog(element.id)"></app-button>
+            <app-button [button]="data.buttons.deleteButton" (click)="openDeleteDialog(element.id, element.name, element.lastName)"></app-button>
           </div>
         </td>
       </ng-container>

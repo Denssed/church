@@ -14,16 +14,20 @@ import { NavTabComponent } from './Components/nav-tab/nav-tab.component';
 import { ModalFormComponent } from './Components/modal-form/modal-form.component';
 import { ModalDeleteComponent } from './Components/modal-delete/modal-delete.component';
 
+
 //Containers
 import { NavigationComponent } from './Container/navigation/navigation.component';
 import { LoginComponent } from './Container/login/login.component';
 import { AdminComponent } from './Container/admin/admin.component';
+import { BaptismComponent } from './Container/baptism/baptism.component';
+import { PdfComponent } from './Components/pdf/pdf.component';
 
 
 
 //Material
 import { MaterialModule } from './material.module';
-import { BaptismComponent } from './Container/baptism/baptism.component';
+import { RecordComponent } from './Container/record/record.component';
+import { PresentationComponent } from './Container/presentation/presentation.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,10 @@ import { BaptismComponent } from './Container/baptism/baptism.component';
     AdminComponent,
     ModalFormComponent,
     ModalDeleteComponent,
-    BaptismComponent
+    BaptismComponent,
+    PdfComponent,
+    RecordComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,

@@ -5,14 +5,7 @@ import { ModalDeleteComponent } from 'src/app/Components/modal-delete/modal-dele
 import { ModalFormComponent } from 'src/app/Components/modal-form/modal-form.component';
 import { BaptismService } from 'src/app/Services/Baptism.service';
 import data  from '../../../assets/json/BaptismInputData.json'
-
-interface Baptism {
-  id: string;
-  name: string;
-  lastName: string;
-  pof: string;
-  age: string;
-}
+import { Baptism } from 'src/app/types';
 
 @Component({
   selector: 'app-baptism',
@@ -49,7 +42,7 @@ export class BaptismComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalFormComponent, {
       data: {
         input: this.data.BaptismInput,
-        button: this.data.modalBtn,
+        button: this.data.modalBtn.addBtn,
         route: this.currentRoute,
         title: 'Agregar Staff',
         onCreate: true,
@@ -72,7 +65,7 @@ export class BaptismComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalFormComponent, {
       data: {
         input: this.data.BaptismInput,
-        button: this.data.modalBtn,
+        button: this.data.modalBtn.addBtn,
         route: this.currentRoute,
         title: 'Editar Staff',
         onCreate: false,

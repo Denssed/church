@@ -1,0 +1,16 @@
+<div class="pdfContainer">
+  <mat-form-field class="pdf__input">
+    <mat-label>Nombre</mat-label>
+    <input type="text"
+           placeholder="Escribe un nombre"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      @for (option of filteredOptions | async; track option) {
+        <mat-option [value]="option">{{option}}</mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+  <app-button [button]="button" (click)="generatePdf()">Download PDF</app-button>
+</div>

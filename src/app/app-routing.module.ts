@@ -5,6 +5,8 @@ import { NavigationComponent } from './Container/navigation/navigation.component
 import { LoginComponent } from './Container/login/login.component';
 import { AdminComponent } from './Container/admin/admin.component';
 import { BaptismComponent } from './Container/baptism/baptism.component';
+import { PresentationComponent } from './Container/presentation/presentation.component';
+import { RecordComponent } from './Container/record/record.component';
 
 const routes: Routes = [
   //Login
@@ -18,8 +20,8 @@ const routes: Routes = [
       { path: 'admin', component: AdminComponent },
       // { path: 'contable', component: NavigationComponent },
       { path: 'bautismo', component: BaptismComponent },
-      // { path: 'presentacion', component: NavigationComponent },
-      // { path: 'registro', component: NavigationComponent },
+      { path: 'presentacion', component: PresentationComponent },
+      { path: 'registro', component: RecordComponent },
       // { path: 'matrimonial', component: NavigationComponent },
       // { path: 'departamentos', component: NavigationComponent },
       // { path: 'gruposCasa', component: NavigationComponent },
