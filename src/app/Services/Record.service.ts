@@ -23,7 +23,7 @@ export class RecordService {
   }
 
   updateUser(id: string, data: any): Observable<any> {
-    return this.http.put<any>(`${this.URL}/user/${id}`, data);
+    return this.http.patch<any>(`${this.URL}/user/${id}`, data);
   }
 
   deleteUser(id: string): Observable<any> {

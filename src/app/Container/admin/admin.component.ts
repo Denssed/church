@@ -4,21 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ModalFormComponent } from 'src/app/Components/modal-form/modal-form.component';
 import { ModalDeleteComponent } from 'src/app/Components/modal-delete/modal-delete.component';
 import { AdminService } from 'src/app/Services/Admin.service';
-import { button } from 'src/app/types';
+import { Staff } from 'src/app/types';
 import data from '../../../assets/json/AdminInputData.json';
-
-
-
-export interface Staff {
-  id: string;
-  name: string;
-  lastName: string;
-  email: string;
-  role: {
-    admin: boolean;
-    accoutant: boolean;
-  };
-}
 
 @Component({
   selector: 'app-admin',

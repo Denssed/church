@@ -24,7 +24,7 @@ getBaptism(id: string): Observable<any> {
 }
 
 updateBaptism(id: string, data: any): Observable<any> {
-  return this.http.put<any>(`${this.URL}/baptism/${id}`, data)
+  return this.http.patch<any>(`${this.URL}/baptism/${id}`, data)
 }
 
 deleteBaptism(id: string): Observable<any> {

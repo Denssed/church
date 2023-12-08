@@ -42,7 +42,7 @@ export class ModalFormComponent {
   }
 
   editValues() {
-    this.form.editValues(this.data.route, this.data.id, this.data.input)
+    this.form.editValues(this.data.route, this.data.id)
     this.dialogRef.close();
   }
 

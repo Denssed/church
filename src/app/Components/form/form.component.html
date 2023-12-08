@@ -2,10 +2,9 @@
   <label class="form__label"
     ><b>{{ item!.label | titlecase }}</b></label
   >
-  <mat-form-field>
+  <mat-form-field *ngIf="item!.inputType === 'input'">
     <mat-label>{{ item!.placeholder | titlecase }}</mat-label>
     <input
-      *ngIf="item!.inputType === 'input'"
       matInput
       [type]="item!.type"
       [value]="item.value ? item.value : this.value"
@@ -13,9 +12,11 @@
       (ngModelChange)="setValue($event)"
       required
     />
-    <div *ngIf="item?.inputType === 'select'">
+  </mat-form-field>
+  <mat-form-field *ngIf="item?.inputType === 'select'">
+    <div>
       <mat-select
-        [value]="this.value"
+        [value]="item.value ? item.value : this.value"
         [ngModel]="this.value"
         (ngModelChange)="setValue($event)"
       >
@@ -25,4 +26,12 @@
       </mat-select>
     </div>
   </mat-form-field>
+    <div *ngIf="item?.inputType === 'boolean'">
+      {{item.value ? "item value" + item.value : "default value" + this.value}}
+      <mat-checkbox class="example-margin"
+      [value]="item.value ? item.value : this.value"
+      [ngModel]="this.value"
+      (ngModelChange)="setValue($event)"
+      >{{item!.placeholder}}</mat-checkbox>
+    </div>
 </div>

@@ -20,7 +20,7 @@ import { NavigationComponent } from './Container/navigation/navigation.component
 import { LoginComponent } from './Container/login/login.component';
 import { AdminComponent } from './Container/admin/admin.component';
 import { BaptismComponent } from './Container/baptism/baptism.component';
-import { PdfComponent } from './Components/pdf/pdf.component';
+import { PdfBaptismComponent } from './Components/pdf-baptism/pdf-baptism.component';
 
 
 
@@ -28,6 +28,7 @@ import { PdfComponent } from './Components/pdf/pdf.component';
 import { MaterialModule } from './material.module';
 import { RecordComponent } from './Container/record/record.component';
 import { PresentationComponent } from './Container/presentation/presentation.component';
+import { PdfPresentationComponent } from './Components/pdf-presentation/pdf-presentation.component';
 
 @NgModule({
   declarations: [
@@ -41,9 +42,10 @@ import { PresentationComponent } from './Container/presentation/presentation.com
     ModalFormComponent,
     ModalDeleteComponent,
     BaptismComponent,
-    PdfComponent,
+    PdfBaptismComponent,
     RecordComponent,
-    PresentationComponent
+    PresentationComponent,
+    PdfPresentationComponent
   ],
   imports: [
     BrowserModule,

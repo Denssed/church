@@ -18,6 +18,7 @@ export class BaptismComponent implements OnInit {
   dataSource: Baptism[] = [];
   currentRoute: string | undefined;
   data = data
+  mirrorData: any[] = []
 
   constructor(
     private baptism: BaptismService,
@@ -56,8 +57,10 @@ export class BaptismComponent implements OnInit {
   }
 
   async openEditDialog(id: string) {
+    this.mirrorData = [];
+    this.data.BaptismInput.forEach(val => this.mirrorData.push(Object.assign({}, val)));
     await this.baptism.getBaptism(id).subscribe((res) => {
-      this.data.BaptismInput.map((input) => {
+      this.mirrorData.map((input) => {
         input.value = res.body[input.type];
       });
     });

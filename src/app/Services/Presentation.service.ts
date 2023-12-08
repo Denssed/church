@@ -24,7 +24,7 @@ getPresentation(id: string): Observable<any> {
 }
 
 updatePresentation(id: string, data: any): Observable<any> {
-  return this.http.put<any>(`${this.URL}/presentation/${id}`, data)
+  return this.http.patch<any>(`${this.URL}/presentation/${id}`, data)
 }
 
 deletePresentation(id: string): Observable<any> {

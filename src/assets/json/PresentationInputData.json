@@ -1,0 +1,84 @@
+{
+  "buttons": {
+    "addPresentationButton": {
+      "text": "Agregar",
+      "type": "primary",
+      "icon": ""
+    },
+    "editButton": {
+      "text": "Editar",
+      "type": "primary--small",
+      "icon": ""
+    },
+    "deleteButton": {
+      "text": "Eliminar",
+      "type": "danger--small",
+      "icon": ""
+    }
+  },
+  "PresentationInput": [
+    {
+      "label": "Nombre del padre",
+      "placeholder": "Ingrese nombre del padre",
+      "inputType": "input",
+      "type": "nameFather",
+      "value": ""
+    },
+    {
+      "label": "Telefono del padre",
+      "placeholder": "Ingrese telefono del padre",
+      "inputType": "input",
+      "type": "phoneFather",
+      "value": ""
+    },
+    {
+      "label": "Nombre de la madre",
+      "placeholder": "Ingrese nombre de la madre",
+      "inputType": "input",
+      "type": "nameMother",
+      "value": ""
+    },
+    {
+      "label": "Telefono de la madre",
+      "placeholder": "Ingrese telefono de la madre",
+      "inputType": "input",
+      "type": "phoneMother",
+      "value": ""
+    },
+    {
+      "label": "Nombre del niño",
+      "placeholder": "Ingrese nombre del niño",
+      "inputType": "input",
+      "type": "nameClild",
+      "value": ""
+    },
+    {
+      "label": "Nombre de padrino",
+      "placeholder": "Ingrese Nombre",
+      "inputType": "input",
+      "type": "godParent",
+      "value": ""
+    },
+    {
+      "label": "Ministro",
+      "placeholder": "Ingrese ministro",
+      "inputType": "input",
+      "type": "minister",
+      "value": ""
+    }
+  ],
+  "modalBtn": {
+    "addBtn": {
+      "text": "Agregar",
+      "type": "primary"
+    },
+    "editBtn": {
+      "text": "Editar",
+      "type": "primary"
+    },
+    "deleteBtn": {
+      "text": "Eliminar",
+      "type": "secondary"
+    }
+  }
+}

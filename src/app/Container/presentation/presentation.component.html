@@ -1,1 +1,85 @@
+<app-nav-tab />
+<mat-tab-group>
+  <mat-tab label="Presentation">
+    <div class="presentationContainer">
+      <div class="presentation__actions">
+        <app-button
+          [button]="this.data.buttons.addPresentationButton"
+          (click)="openAddDialog()"
+        ></app-button>
+      </div>
+      <div class="presentation__table">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
 
+          <!-- Position Column -->
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="nameFather">
+            <th mat-header-cell *matHeaderCellDef>Nombre del padre</th>
+            <td mat-cell *matCellDef="let element">{{ element.nameFather }}</td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="phoneFather">
+            <th mat-header-cell *matHeaderCellDef>Telefono del padre</th>
+            <td mat-cell *matCellDef="let element">{{ element.phoneFather }}</td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="nameMother">
+            <th mat-header-cell *matHeaderCellDef>Nombre de la madre</th>
+            <td mat-cell *matCellDef="let element">{{ element.nameMother}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="phoneMother">
+            <th mat-header-cell *matHeaderCellDef>Telefono de la madre</th>
+            <td mat-cell *matCellDef="let element">{{ element.phoneMother }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="nameChild">
+            <th mat-header-cell *matHeaderCellDef>Nombre del niño</th>
+            <td mat-cell *matCellDef="let element">{{ element.nameChild }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="godParent">
+            <th mat-header-cell *matHeaderCellDef>Nombre de padrino</th>
+            <td mat-cell *matCellDef="let element">{{ element.godParent }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="minister">
+            <th mat-header-cell *matHeaderCellDef>Ministro</th>
+            <td mat-cell *matCellDef="let element">{{ element.minister }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Acciones</th>
+            <td mat-cell *matCellDef="let element">
+              <div class="action__butons">
+                <app-button
+                  [button]="this.data.buttons.editButton"
+                  (click)="openEditDialog(element.id)"
+                ></app-button>
+                <app-button
+                  [button]="this.data.buttons.deleteButton"
+                  (click)="
+                    openDeleteDialog(element.id, element.name, element.lastName)
+                  "
+                ></app-button>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Descargar Presentacion">
+    <div class="presentationContainer">
+      <app-pdf-presentation></app-pdf-presentation>
+    </div>
+  </mat-tab>
+</mat-tab-group>

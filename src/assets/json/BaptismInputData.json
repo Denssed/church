@@ -1,6 +1,6 @@
 {
   "buttons": {
-    "addStaffButton": {
+    "addBaptismButton": {
       "text": "Agregar niño",
       "type": "primary",
       "icon": ""
@@ -36,7 +36,7 @@
       "placeholder": "Ingrese pof",
       "inputType": "input",
       "type": "pof",
-      "value": true
+      "value": ""
     },
     {
       "label": "Edad",

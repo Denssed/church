@@ -1,0 +1,98 @@
+{
+  "buttons": {
+    "addUserButton": {
+      "text": "Agregar Usuario",
+      "type": "primary",
+      "icon": ""
+    },
+    "editButton": {
+      "text": "Editar",
+      "type": "primary--small",
+      "icon": ""
+    },
+    "deleteButton": {
+      "text": "Eliminar",
+      "type": "danger--small",
+      "icon": ""
+    }
+  },
+  "RecordInput": [
+    {
+      "label": "Nombre",
+      "placeholder": "Ingrese nombre",
+      "inputType": "input",
+      "type": "name",
+      "value": ""
+    },
+    {
+      "label": "Apellido",
+      "placeholder": "Ingrese apellido",
+      "inputType": "input",
+      "type": "lastName",
+      "value": ""
+    },
+    {
+      "label": "Telefono",
+      "placeholder": "Ingrese telefono",
+      "inputType": "input",
+      "type": "phone",
+      "value": ""
+    },
+    {
+      "label": "Email",
+      "placeholder": "Ingrese Email",
+      "inputType": "input",
+      "type": "email",
+      "value": ""
+    },
+    {
+      "label": "Fecha de nacimiento",
+      "placeholder": "Ingrese fecha de nacimiento",
+      "inputType": "input",
+      "type": "dob",
+      "value": ""
+    },
+    {
+      "label": "Estado civil",
+      "placeholder": "Ingrese estado civil",
+      "inputType": "input",
+      "type": "civilState",
+      "value": ""
+    },
+    {
+      "label": "Profesion",
+      "placeholder": "Ingrese profesion",
+      "inputType": "input",
+      "type": "profesion",
+      "value": ""
+    },
+    {
+      "label": "Direccion",
+      "placeholder": "Ingrese direccion",
+      "inputType": "input",
+      "type": "address",
+      "value": ""
+    },
+    {
+      "label": "Bautizado",
+      "placeholder": "Es bautizado",
+      "inputType": "boolean",
+      "type": "isBaptized",
+      "value": ""
+    }
+  ],
+  "modalBtn": {
+    "addBtn": {
+      "text": "Agregar",
+      "type": "primary"
+    },
+    "editBtn": {
+      "text": "Editar",
+      "type": "primary"
+    },
+    "deleteBtn": {
+      "text": "Eliminar",
+      "type": "secondary"
+    }
+  }
+}

@@ -8,11 +8,11 @@ import { Baptism, button } from 'src/app/types';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
-  selector: 'app-pdf',
-  templateUrl: './pdf.component.html',
-  styleUrl: './pdf.component.scss',
+  selector: 'app-pdfBaptism',
+  templateUrl: './pdf-baptism.component.html',
+  styleUrl: './pdf-baptism.component.scss',
 })
-export class PdfComponent implements OnInit {
+export class PdfBaptismComponent implements OnInit {
   button: button = {
     text: 'Previsualizar PDF',
     type: 'primary',

@@ -4,7 +4,7 @@
     <div class="baptismContainer">
       <div class="baptism__actions">
         <app-button
-          [button]="this.data.buttons.addStaffButton"
+          [button]="this.data.buttons.addBaptismButton"
           (click)="openAddDialog()"
         ></app-button>
       </div>
@@ -63,7 +63,7 @@
   </mat-tab>
   <mat-tab label="Descargar bautismo">
     <div class="baptismContainer">
-      <app-pdf></app-pdf>
+      <app-pdfBaptism></app-pdfBaptism>
     </div>
   </mat-tab>
 </mat-tab-group>
