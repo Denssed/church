@@ -19,6 +19,7 @@ export class FormComponent implements OnInit {
     if (this.item?.type === 'email') this.pattern = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
     if (this.item?.type === 'password') this.pattern = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)
     // console.log(this.pattern)
+    console.log(this.item)
   }
 
   setValue(value: any) {

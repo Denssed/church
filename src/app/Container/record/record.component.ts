@@ -10,15 +10,25 @@ import data from '../../../assets/json/RecordInputData.json';
 @Component({
   selector: 'app-record',
   templateUrl: './record.component.html',
-  styleUrl: './record.component.scss'
+  styleUrl: './record.component.scss',
 })
 export class RecordComponent {
-
-  displayedColumns: string[] = ['name', 'lastName', 'phone', 'email', 'dob', 'civilState', 'profesion', 'address', 'isBaptized', 'action'];
+  displayedColumns: string[] = [
+    'name',
+    'lastName',
+    'phone',
+    'email',
+    'dob',
+    'civilState',
+    'profesion',
+    'address',
+    'isBaptized',
+    'action',
+  ];
   dataSource: User[] = [];
   currentRoute: string | undefined;
-  data = data
-  mirrorData: any[] = []
+  data = data;
+  mirrorData: any[] = [];
 
   constructor(
     private record: RecordService,
@@ -63,13 +73,15 @@ export class RecordComponent {
 
   async openEditDialog(id: string) {
     this.mirrorData = [];
-    this.data.RecordInput.forEach(val => this.mirrorData.push(Object.assign({}, val)));
+    this.data.RecordInput.forEach((val) =>
+      this.mirrorData.push(Object.assign({}, val))
+    );
     await this.record.getUser(id).subscribe((res) => {
       this.mirrorData.map((input) => {
         input.value = res.body[input.type];
       });
-      console.log("mirror Data",this.mirrorData);
-      console.log("real ata",this.data);
+      console.log('mirror Data', this.mirrorData);
+      console.log('real ata', this.data);
     });
 
     const dialogRef = this.dialog.open(ModalFormComponent, {
@@ -105,4 +117,10 @@ export class RecordComponent {
     });
   }
 
+  displayCivilState(civilState: any): any {
+    if (civilState.single) return "Soltero/a"
+    if (civilState.married) return "Casado/a"
+    if (civilState.widow) return "Viudo/a"
+    if (civilState.divorced) return "Divorciado/a"
+  }
 }

@@ -47,7 +47,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDialogModule,
     MatTabsModule,
     MatAutocompleteModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
   imports: [CommonModule],
 })

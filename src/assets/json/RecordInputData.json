@@ -48,16 +48,22 @@
     {
       "label": "Fecha de nacimiento",
       "placeholder": "Ingrese fecha de nacimiento",
-      "inputType": "input",
+      "inputType": "date",
       "type": "dob",
       "value": ""
     },
     {
       "label": "Estado civil",
       "placeholder": "Ingrese estado civil",
-      "inputType": "input",
+      "inputType": "select",
       "type": "civilState",
-      "value": ""
+      "value": "",
+      "options": [
+        { "value": { "single": true }, "viewValue": "Soltero/a" },
+        { "value": { "married": true }, "viewValue": "Casado/a" },
+        { "value": { "widow": true }, "viewValue": "Viudo/a" },
+        { "value": { "divorced": true }, "viewValue": "Divorciado/a" }
+      ]
     },
     {
       "label": "Profesion",

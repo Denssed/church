@@ -50,7 +50,7 @@
       "inputType": "select",
       "type": "role",
       "value": "",
-      "roles": [
+      "options": [
         { "value": { "admin": true }, "viewValue": "Admin" },
         { "value": { "accountant": true }, "viewValue": "Accountant" }
       ]
@@ -92,9 +92,5 @@
       "text": "Eliminar",
       "type": "secondary"
     }
-  },
-  "roles": [
-    { "value": true, "viewValue": "Admin" },
-    { "value": true, "viewValue": "Accountant" }
-  ]
+  }
 }
