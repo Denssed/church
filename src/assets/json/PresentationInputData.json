@@ -49,7 +49,7 @@
       "label": "Nombre del niño",
       "placeholder": "Ingrese nombre del niño",
       "inputType": "input",
-      "type": "nameClild",
+      "type": "nameChild",
       "value": ""
     },
     {
@@ -60,10 +60,24 @@
       "value": ""
     },
     {
+      "label": "Foto del niño",
+      "placeholder": "Ingrese foto del niño",
+      "inputType": "file",
+      "type": "childPhoto",
+      "value": ""
+    },
+    {
       "label": "Ministro",
       "placeholder": "Ingrese ministro",
       "inputType": "input",
       "type": "minister",
+      "value": ""
+    },
+    {
+      "label": "Ingrese fecha",
+      "placeholder": "Ingrese fecha",
+      "inputType": "date",
+      "type": "date",
       "value": ""
     }
   ],

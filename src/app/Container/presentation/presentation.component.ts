@@ -14,7 +14,7 @@ import data from '../../../assets/json/PresentationInputData.json';
 })
 export class PresentationComponent {
 
-  displayedColumns: string[] = ['nameFather', 'phoneFather', 'nameMother', 'phoneMother', 'nameChild', 'godParent', 'minister','action'];
+  displayedColumns: string[] = ['nameFather', 'phoneFather', 'nameMother', 'phoneMother', 'nameChild', 'godParent', 'childPhoto', 'minister', 'date','action'];
   dataSource: Presentation[] = [];
   currentRoute: string | undefined;
   data = data
@@ -68,7 +68,7 @@ export class PresentationComponent {
     const dialogRef = this.dialog.open(ModalFormComponent, {
       data: {
         input: this.mirrorData,
-        button: this.data.modalBtn.addBtn,
+        button: this.data.modalBtn.editBtn,
         route: this.currentRoute,
         title: 'Editar Staff',
         onCreate: false,

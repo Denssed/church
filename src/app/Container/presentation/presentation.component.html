@@ -43,9 +43,19 @@
             <td mat-cell *matCellDef="let element">{{ element.nameChild }}</td>
           </ng-container>
 
+          <ng-container matColumnDef="childPhoto">
+            <th mat-header-cell *matHeaderCellDef>Foto del niño</th>
+            <td mat-cell *matCellDef="let element">{{ element.childPhoto }}</td>
+          </ng-container>
+
           <ng-container matColumnDef="godParent">
             <th mat-header-cell *matHeaderCellDef>Nombre de padrino</th>
             <td mat-cell *matCellDef="let element">{{ element.godParent }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Fecha</th>
+            <td mat-cell *matCellDef="let element">{{ element.date }}</td>
           </ng-container>
 
           <ng-container matColumnDef="minister">

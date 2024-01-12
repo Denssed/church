@@ -32,9 +32,9 @@
       "value": ""
     },
     {
-      "label": "Pof",
-      "placeholder": "Ingrese pof",
-      "inputType": "input",
+      "label": "Tiene prueba de fe?",
+      "placeholder": "",
+      "inputType": "boolean",
       "type": "pof",
       "value": ""
     },
@@ -42,7 +42,7 @@
       "label": "Edad",
       "placeholder": "Ingrese edad",
       "inputType": "input",
-      "type": "edad",
+      "type": "age",
       "value": ""
     }
   ],

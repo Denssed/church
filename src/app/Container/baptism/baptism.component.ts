@@ -64,11 +64,12 @@ export class BaptismComponent implements OnInit {
         input.value = res.body[input.type];
       });
     });
+    console.log(this.mirrorData);
 
     const dialogRef = this.dialog.open(ModalFormComponent, {
       data: {
-        input: this.data.BaptismInput,
-        button: this.data.modalBtn.addBtn,
+        input: this.mirrorData,
+        button: this.data.modalBtn.editBtn,
         route: this.currentRoute,
         title: 'Editar Staff',
         onCreate: false,

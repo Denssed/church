@@ -37,13 +37,12 @@
 
       <ng-container matColumnDef="dob">
         <th mat-header-cell *matHeaderCellDef> Fecha de nacimiento </th>
-        <td mat-cell *matCellDef="let element"> {{element.dob}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.dob?.toString().split('T')[0]}} </td>
       </ng-container>
 
       <ng-container matColumnDef="civilState">
         <th mat-header-cell *matHeaderCellDef> Estado civil </th>
         <td mat-cell *matCellDef="let element"> {{displayCivilState(element.civilState)}} </td>
-        <!-- <td mat-cell *matCellDef="let element"> {{element.civilState.married? 'si' : 'no'}} </td> -->
       </ng-container>
 
       <ng-container matColumnDef="profesion">
