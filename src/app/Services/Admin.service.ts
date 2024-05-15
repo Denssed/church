@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class AdminService {
 
-  URL = 'http://localhost:5000';
+  URL_Test = 'http://localhost:5000';
+  URL = 'https://node-api-8ovt.onrender.com';
 
   constructor(private http:HttpClient) { }
 

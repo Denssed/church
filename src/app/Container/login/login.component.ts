@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/Services/Auth/auth.service';
-import { button, input, login } from '../../types'
-import { Router } from '@angular/router';
+import { button, input, login } from '../../types';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/Services/Admin.service';
+import { FormService } from 'src/app/Services/Form.service';
 
 @Component({
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-
   loginInput: input[] = [
     {
       label: 'Email',
@@ -22,48 +22,59 @@ export class LoginComponent {
       placeholder: 'Ingrese Contraseña',
       inputType: 'input',
       type: 'password',
-    }
-  ]
+    },
+  ];
 
   login: login = {
     email: {
       type: 'email',
-      value: ''
+      value: '',
     },
     password: {
       type: 'password',
-      value: ''
-    }
-  }
+      value: '',
+    },
+  };
 
   button: button = {
     text: 'INGRESAR',
-    type: 'primary'
-  }
+    type: 'primary',
+  };
 
-  users: any[] = []
+  users: any[] = [];
+
+  currentRoute: string | undefined;
 
   constructor(
-    private auth: AuthService,
-    private router: Router,
-    private admin: AdminService
-    ) { }
+    private form: FormService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    // this.register.getUsers().subscribe(data => {
-    //   console.log(data.body);
-    //   this.users = data.body;
-    // })
+    this.currentRoute = this.route.snapshot.url[0].path;
   }
 
-  getValues(form: any) {
-    form.name === 'email' ? this.login.email.value = form.value : this.login.password.value = form.value;
-    console.log(this.login);
+  // getValues(form: any) {
+  //   form.name === 'email' ? this.login.email.value = form.value : this.login.password.value = form.value;
+  //   console.log(this.login);
+  // }
+
+  getValues(e: any) {
+    this.form.getValues(e);
   }
 
   authUser() {
-    this.auth.authAccount(this.login.email.value, this.login.password.value);
-    this.router.navigate(['/']);
+    localStorage.setItem('role', '');
+
+    this.form.setValues(this.currentRoute!);
+    setTimeout(() => {
+      if (localStorage.getItem('role')) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        alert('Usuario o contraseña incorrectos');
+      }
+    }, 2000)
   }
 
   forgotPassword() {
@@ -77,6 +88,4 @@ export class LoginComponent {
   changePassword() {
     console.log('change password');
   }
-
-
 }

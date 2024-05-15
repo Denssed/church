@@ -10,21 +10,17 @@ import { RecordComponent } from './Container/record/record.component';
 
 const routes: Routes = [
   //Login
-  { path: 'login', component: LoginComponent },
-  // { path: 'login/recuperar', component: RecuperarclaveComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent},
   //General
   {
-    path: '',
+    path: 'dashboard',
     component: NavigationComponent,
     children: [
       { path: 'admin', component: AdminComponent },
-      // { path: 'contable', component: NavigationComponent },
       { path: 'bautismo', component: BaptismComponent },
       { path: 'presentacion', component: PresentationComponent },
       { path: 'registro', component: RecordComponent },
-      // { path: 'matrimonial', component: NavigationComponent },
-      // { path: 'departamentos', component: NavigationComponent },
-      // { path: 'gruposCasa', component: NavigationComponent },
     ],
   },
 ];

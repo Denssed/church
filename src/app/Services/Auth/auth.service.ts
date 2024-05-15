@@ -1,30 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  auth = getAuth();
+  URL_Test = 'http://localhost:5000';
+  URL = 'https://node-api-8ovt.onrender.com';
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
-   async authAccount(email: string, password: string) {
-    try {
-      const sign = await signInWithEmailAndPassword(this.auth, email, password)
-      const user = sign.user;
-      console.log(user);
-    } catch (error) {
-      console.log(error);
-    }
-
+  authUser(user: any): Observable<any> {
+    return this.http.post<any>(`${this.URL}/login`, user);
   }
 
-  recoverAccount(email: string) {
-
-  }
-
-  signOut() {
-
+  setRole() {
+    return JSON.parse(localStorage['role'])
   }
 }

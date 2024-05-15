@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -9,7 +9,9 @@ import { AuthService } from 'src/app/Services/Auth/auth.service';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
+
+  role: any;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -20,7 +22,9 @@ export class NavigationComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private auth: AuthService) {
-      // this.auth.authAccount('rodriguezp.jeremy@gmail.com', '123456')
+    }
+
+    ngOnInit() {
     }
 
 }

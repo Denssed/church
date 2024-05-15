@@ -71,6 +71,10 @@ interface User {
   isBaptized: boolean;
 }
 
+interface Login {
+  email: string;
+  password: string;
+}
 
 
 export {
@@ -81,5 +85,6 @@ export {
   Baptism,
   Presentation,
   Staff,
-  User
+  User,
+  Login
 };

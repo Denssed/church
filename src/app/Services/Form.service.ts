@@ -4,6 +4,7 @@ import { formInterface } from '../types';
 import { BaptismService } from './Baptism.service';
 import { RecordService } from './Record.service';
 import { PresentationService } from './Presentation.service';
+import { AuthService } from './Auth/auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,8 @@ export class FormService {
     private admin: AdminService,
     private baptism: BaptismService,
     private presentation: PresentationService,
-    private record: RecordService
+    private record: RecordService,
+    private auth: AuthService
   ) {}
 
   getValues(form: any) {
@@ -46,6 +48,17 @@ export class FormService {
       case 'registro':
         console.log('admin Create Route', route);
         this.record.postUsers(this.form).subscribe((res) => console.log(res));
+        break;
+
+      case 'login':
+        console.log('login Auth Route', route);
+        this.auth.authUser(this.form).subscribe((res): any => {
+          localStorage.setItem('token', res.body.token);
+          localStorage.setItem('role', JSON.stringify(res.body.role));
+          console.log(res.body);
+          console.log(localStorage['role']);
+          console.log(localStorage['token']);
+        });
         break;
     }
   }
@@ -77,34 +90,30 @@ export class FormService {
           .updateUser(id, this.form)
           .subscribe((res) => console.log(res));
         break;
-      }
     }
+  }
 
-    deleteValues(route: string, id: string) {
-      switch (route) {
+  deleteValues(route: string, id: string) {
+    switch (route) {
       case 'admin':
         this.admin.deleteStaff(id).subscribe((res) => console.log(res));
         break;
-        case 'bautismo':
-          console.log('bautismo Create Route', route);
-          this.baptism
-            .deleteBaptism(id)
-            .subscribe((res) => console.log(res));
-          break;
+      case 'bautismo':
+        console.log('bautismo Create Route', route);
+        this.baptism.deleteBaptism(id).subscribe((res) => console.log(res));
+        break;
 
-        case 'presentacion':
-          console.log('presentacion Create Route', route);
-          this.presentation
-            .deletePresentation(id)
-            .subscribe((res) => console.log(res));
-          break;
+      case 'presentacion':
+        console.log('presentacion Create Route', route);
+        this.presentation
+          .deletePresentation(id)
+          .subscribe((res) => console.log(res));
+        break;
 
-        case 'registro':
-          console.log('admin Create Route', route);
-          this.record
-            .deleteUser(id)
-            .subscribe((res) => console.log(res));
-          break;
-      }
+      case 'registro':
+        console.log('admin Create Route', route);
+        this.record.deleteUser(id).subscribe((res) => console.log(res));
+        break;
+    }
   }
 }
